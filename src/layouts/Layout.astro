@@ -1,3 +1,8 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,9 +10,11 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
 	</body>
 </html>
@@ -18,5 +25,6 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		font-family: 'Quicksand', sans-serif;
 	}
 </style>

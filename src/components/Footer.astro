@@ -1,0 +1,37 @@
+---
+import ContactForm from './ContactForm.astro';
+---
+
+<footer class="bg-black">
+    <div class=" container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                <div class="col-span-2">
+                    <div class="text-white text-2xl font-bold mb-6 flex flex-row gap-4 items-center" style="color: #D4C5AE;">
+                        <div style="background-color:#D4C5AE" class="aspect-square min-w-4 rotate-45 rounded-xs inline-block"/>¿Cómo colaborar?
+                    </div>
+                    <p class="text-white mb-6" >Puedes formar parte de WITAM de varias formas</p>
+                    <ul class="text-white space-y-4 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-amber-500 mr-2">◆</span>
+                            <span>Hazte socia y accede a todos los beneficios desde hoy.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-500 mr-2">◆</span>
+                            <span>Patrocina la asociación y forma parte de nuestras actividades, estudios y campañas.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-500 mr-2">◆</span>
+                            <span>Colabora puntualmente en formaciones, eventos o programas específicos.</span>
+                        </li>
+                    </ul>
+                    <p class="text-white font-medium">Construyamos juntas un sector con más talento, más oportunidades y más futuro.</p>
+                </div>
+                <div class="flex-1">
+                    <ContactForm />
+                </div>
+            </div>
+    </div>
+    <div class="bg-black text-white py-4 text-center text-xs border-t border-gray-800">
+        <p>© 2025 WITAM - Women in Transport and Mobility | Todos los derechos reservados</p>
+    </div>
+</footer>

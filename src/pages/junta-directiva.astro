@@ -1,0 +1,85 @@
+---
+import SectionHeader from "../components/SectionHeader.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from '../components/Footer.astro';
+
+const avatars = [
+    {
+        name: 'Lola Ortiz',
+        role: 'Presidenta',
+        job: 'Directora General de Planificación e Infraestructuras de Movilidad del Ayuntamiento de Madrid',
+        image: '/src/assets/img/avatar-1.png'
+    },
+    {
+        name: 'Noemí Vaquero',
+        role: 'Vicepresidenta',
+        job: 'Directora de Madrid y Directora de Movilidad en Innovasur',
+        image: '/src/assets/img/avatar-2.png'
+    },
+    {
+        name: 'Beatriz Osuna',
+        role: 'Tesorera',
+        job: 'Directora de Desarrollo de Negocio de Rover Grupo',
+        image: '/src/assets/img/avatar-3.png'
+
+    },
+    {
+        name: 'Ofelia Manjón',
+        role: 'Secretaria',
+        job: 'Directora General de Movilidad y Accesibilidad Universal del Ayuntamiento de Santa Cruz de Tenerife',
+        image: '/src/assets/img/avatar-4.png'
+
+    }
+]
+---
+<Layout>
+	<div id="BG" class="bg-center bg-cover bg-no-repeat w-full flex flex-col md:items-start md:justify-center h-[50vh] md:h-screen"/>
+    <SectionHeader title='Junta directiva' />
+    <div class="container flex flex-col gap-8">
+        <div id="LEADERSHIP" class="flex flex-col gap-4">
+            <p class="font-semibold text-xl">Liderazgo con perspectiva</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                <p class="flex flex-2 text-pretty">La Junta Directiva de WITAM está formada por mujeres referentes en distintas áreas del transporte y la movilidad. Comprometidas con la igualdad, la innovación y el impulso del talento femenino, su labor es estratégica: definen la visión, coordinan las acciones clave de la Asociación y representan nuestros valores en todos los espacios institucionales y sectoriales.</p>
+                <p class="flex flex-1" style="color: #D4C5AE;">"El liderazgo femenino no es una opción: es el motor de una movilidad más justa, eficiente y sostenible."</p>
+            </div>
+        </div>
+        <div id="COMPONENTS" class="flex flex-col gap-8">
+            <p class="font-semibold text-xl">Composición de la Junta </p>
+            <div id="GALLERY" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-center gap-6 md:gap-8">
+                {
+                    avatars.map(avatar => (
+                        <div class="flex flex-col items-center">
+                            <div class="mb-3">
+                                <img src={avatar.image} alt={avatar.name} class="aspect-square rounded-md object-cover"/>
+                            </div>
+                            <div class="flex flex-col items-start justify-between ">
+                                <span class="flex flex-col">
+                                    <p class="font-bold text-lg">{avatar.name}</p>
+                                    <p class="text-md " style="color:#D4C5AE">{avatar.role}</p>
+                                </span>
+                                <p class="text-sm text-left mt-2">{avatar.job}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+    <Footer/>
+
+</Layout>
+
+
+<style>
+	#BG {
+		background-image: url('../assets/img/bg-image-junta.png');
+		background-position: center;
+	}
+	
+	@media (max-width: 768px) {
+		#BG {
+			background-position: center top;
+			background-size: contain;
+		}
+	}
+</style>
