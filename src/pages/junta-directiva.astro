@@ -3,32 +3,37 @@ import SectionHeader from "../components/SectionHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import Footer from '../components/Footer.astro';
 
+// Importar las imágenes
+import avatar1 from '../assets/img/avatar-1.png';
+import avatar2 from '../assets/img/avatar-2.png';
+import avatar3 from '../assets/img/avatar-3.png';
+import avatar4 from '../assets/img/avatar-4.png';
+
 const avatars = [
     {
         name: 'Lola Ortiz',
         role: 'Presidenta',
         job: 'Directora General de Planificación e Infraestructuras de Movilidad del Ayuntamiento de Madrid',
-        image: '/src/assets/img/avatar-1.png'
+        image: avatar1.src
     },
     {
         name: 'Noemí Vaquero',
         role: 'Vicepresidenta',
         job: 'Directora de Madrid y Directora de Movilidad en Innovasur',
-        image: '/src/assets/img/avatar-2.png'
+        image: avatar2.src
     },
     {
         name: 'Beatriz Osuna',
         role: 'Tesorera',
         job: 'Directora de Desarrollo de Negocio de Rover Grupo',
-        image: '/src/assets/img/avatar-3.png'
+        image: avatar3.src
 
     },
     {
         name: 'Ofelia Manjón',
         role: 'Secretaria',
         job: 'Directora General de Movilidad y Accesibilidad Universal del Ayuntamiento de Santa Cruz de Tenerife',
-        image: '/src/assets/img/avatar-4.png'
-
+        image: avatar4.src
     }
 ]
 ---
