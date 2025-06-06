@@ -3,65 +3,205 @@ import Footer from "../components/Footer.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Layout from "../layouts/Layout.astro";
 
+const modalidades = [
+  {
+    title: "Patrocinio institucional",
+    description: "Participa activamente en eventos, mesas redondas y estudios del sector. Aparece como patrocinador oficial con distintos niveles de visibilidad."
+  },
+  {
+    title: "Apoyo a eventos o formaciones",
+    description: "Patrocina o impulsa actividades específicas (jornadas, talleres, hackatones...)."
+  },
+  {
+    title: "Beneficios a socias",
+    description: "Ofrece condiciones especiales, descuentos o plazas reservadas en tus formaciones, servicios o eventos."
+  },
+  {
+    title: "Colaboraciones estratégicas",
+    description: "Diseñemos juntos iniciativas a medida, alineadas con tus valores e intereses en movilidad y talento."
+  }
+]
+const levels =[
+  {
+    tier: "platino",
+    description: "Visibilidad + participación activa",
+    color: "#DADADA"
+  },
+  {
+    tier: "oro",
+    description: "Espacio destacado en eventos + media",
+    color: "#D4C5AE"
+  },
+  {
+    tier: "plata",
+    description: "Logotipo y mención en boletines/web",
+    color: "#B6B6B6"
+  },
+  {
+    tier: "bronce",
+    description: "Presencia básica e invitaciones especiales",
+    color: "#CEAF98"
+  }
+]
 ---
+
 <Layout>
-    <div id="BG" class="bg-cover bg-center bg-no-repeat h-screen w-full flex flex-col md:items-start md:justify-center"/>
-    <SectionHeader title="Socias y colaboradoras" />
-    <div class="container flex flex-col gap-8">
-        <div class="flex flex-col gap-8 max-w-xl text-pretty">
-            <p class="font-semibold text-xl">Únete al cambio.<br/>
-                Forma parte de WITAM.</p>
-            <p>Desde WITAM creemos en la fuerza de la red, en el poder de compartir experiencias y en el impacto real de sumar esfuerzos. Tanto si eres una profesional del sector como si representas a una empresa o institución, esta sección es para ti.</p>
-        </div>
-        <div class="bg-orange-100 px-4 py-2 rounded-lg flex-1">
-            <p class="font-bold">Para mujeres profesionales: hazte socia</p>
-        </div>
-        <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-            <div class="flex flex-col gap-4">
-                <p class="font-bold text-lg">¿A quién va dirigido?</p>
-                <p>A mujeres que trabajen o aspiren a trabajar en el ámbito del transporte, la movilidad, la logística, la ingeniería, la innovación tecnológica aplicada al sector o áreas relacionadas.</p>
+  <div
+    id="BG"
+    class="bg-cover bg-center bg-no-repeat h-screen w-full flex flex-col md:items-start md:justify-center"
+  >
+  </div>
+  <SectionHeader title="Socias y colaboradoras" />
+  <div class="container flex flex-col gap-8">
+    <div class="flex flex-col gap-8 max-w-xl text-pretty">
+      <p class="font-semibold text-2xl">
+        Únete al cambio.<br />
+        Forma parte de WITAM.
+      </p>
+      <p>
+        Desde WITAM creemos en la fuerza de la red, en el poder de compartir
+        experiencias y en el impacto real de sumar esfuerzos. Tanto si eres una
+        profesional del sector como si representas a una empresa o institución,
+        esta sección es para ti.
+      </p>
+    </div>
+    <div class="header-socia">
+      <p class="font-bold">Para mujeres profesionales: hazte socia</p>
+    </div>
+    <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+      <div class="flex flex-col gap-4">
+        <p class="font-bold text-lg">¿A quién va dirigido?</p>
+        <p>
+          A mujeres que trabajen o aspiren a trabajar en el ámbito del
+          transporte, la movilidad, la logística, la ingeniería, la innovación
+          tecnológica aplicada al sector o áreas relacionadas.
+        </p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <p class="font-bold text-lg">Tipos de membresía</p>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="w-40 rounded-xl shadow-md overflow-hidden text-sm">
+            <div class="bg-gray-300 text-center font-bold uppercase py-2">
+              Socia Junior
             </div>
-            <div class="flex flex-col gap-4">
-                <p class="font-bold text-lg">Tipos de membresía</p>
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="w-40 rounded-xl shadow-md overflow-hidden text-sm">
-                        <div class="bg-gray-300 text-center font-bold uppercase py-2">
-                          Socia Junior
-                        </div>
-                        <div style="background-color: #F6F3EF" class=" text-gray-800 px-3 py-4 leading-tight">
-                          Para mujeres en<br />
-                          etapa inicial de su<br />
-                          carrera
-                        </div>
-                        <div style="background-color: #f1ece8" class=" px-3 py-2 font-bold text-black">
-                          Cuota anual: 62,5€
-                        </div>
-                      </div>
-                      <div class="w-40 rounded-xl shadow-md overflow-hidden text-sm">
-                        <div style="background-color:#4B4B4B" class="text-center font-bold uppercase text-xs py-2 text-white">
-                          Socia Senior
-                        </div>
-                        <div style="background-color: #F6F3EF" class=" text-gray-800 px-3 py-4 leading-tight">
-                          Para profesionales<br />
-                          con experiencia<br />
-                          consolidada
-                        </div>
-                        <div style="background-color: #f1ece8" class=" px-3 py-2 font-bold text-black">
-                          Cuota anual: 125€
-                        </div>
-                      </div>
-                </div>
+            <div
+              style="background-color: #F6F3EF"
+              class="text-gray-800 px-3 py-4 leading-tight"
+            >
+              Para mujeres en<br />
+              etapa inicial de su<br />
+              carrera
             </div>
+            <div
+              style="background-color: #f1ece8"
+              class="px-3 py-2 font-bold text-black"
+            >
+              Cuota anual: 62,5€
+            </div>
+          </div>
+          <div class="w-40 rounded-xl shadow-md overflow-hidden text-sm">
+            <div
+              style="background-color:#4B4B4B"
+              class="bg-gray-300 text-center font-bold uppercase py-2 text-white"
+            >
+              Socia Senior
+            </div>
+            <div
+              style="background-color: #F6F3EF"
+              class="text-gray-800 px-3 py-4 leading-tight"
+            >
+              Para profesionales<br />
+              con experiencia<br />
+              consolidada
+            </div>
+            <div
+              style="background-color: #f1ece8"
+              class="px-3 py-2 font-bold text-black"
+            >
+              Cuota anual: 125€
+            </div>
+          </div>
         </div>
-        <div class="bg-orange-100 px-4 py-2 rounded-lg flex-1">
-            <p class="font-bold">Para empresas, entidades e instituciones: colabora con WITAM</p>
+      </div>
+      <div>
+        <p><b>¿Te interesa?</b></p>
+        <p>Déjanos tu email y te enviaremos los pasos para asociarte.</p>
+        <button class="px-12 py-0.5 bg-black text-white rounded-full mt-4">
+          Enviar
+        </button>
+      </div>
+      <div class="flex flex-col gap-4">
+        <p><b>Beneficios de ser socia:</b></p>
+        <ul class="list-disc list-inside flex flex-col flex-wrap gap-2">
+          <li>Acceso a formaciones especializadas, talleres y mentorías.</li>
+          <li>
+            Participación en eventos, jornadas y encuentros de networking.
+          </li>
+          <li>
+            Visibilidad dentro de una comunidad referente en igualdad y
+            movilidad.
+          </li>
+          <li>
+            Acceso exclusivo a bolsa de empleo, documentación y convocatorias.
+          </li>
+          <li>
+            Prioridad en la participación en grupos de trabajo, congresos y
+            comités.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header-socia">
+      <p class="font-bold">
+        Para empresas, entidades e instituciones: colabora con WITAM
+      </p>
+    </div>
+    <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-4 max-w-xl text-balance">
+          <p class="text-2xl"><b>¿Por qué colaborar?</b></p>
+          <p>
+            El compromiso con la igualdad y la diversidad no solo es justo, también
+            es estratégico. Colaborar con WITAM te posiciona como una entidad
+            referente en responsabilidad social, innovación inclusiva y apoyo al
+            talento femenino.
+          </p>
+      </div>
+      <div class="flex flex-col gap-8">
+        <p class="text-2xl"><b>Modalidades de colaboración</b></p>
+        <div class="flex flex-row flex-wrap gap-8">
+          {modalidades.map((modalidad) => (
+            <div style="background-color:  #F6F3EF" class="flex flex-col rounded-lg overflow-hidden max-w-60">
+              <div class="p-4 flex flex-wrap bg-black ">
+                <p class="max-w-40 font-bold uppercase text-left text-white">{modalidad.title}</p>
+              </div>
+              <div class="px-6 py-4 text-left">
+                <p>{modalidad.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="mt-4 text-2xl"><b>Niveles de patrocinio (ejemplo):</b></p>
+        <div class="flex flex-row flex-wrap gap-8">
+          {levels.map((level) => (
+            <div style="background-color:  #F6F3EF" class="flex flex-col max-w-60 rounded-lg overflow-hidden">
+              <div style={`background-color: ${level.color};`} class="p-4 flex flex-wrap">
+                <p class="uppercase text-center font-bold">{level.tier}</p>
+              </div>
+              <div class="px-12 py-4 text-left text-semibold">
+                <p class="">{level.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
     </div>
-    <Footer/>
+    </div>
+  </div>
+  <Footer />
 </Layout>
 
 <style>
-	#BG {
-		background-image: url('../assets/img/bg-image-socia.png');
-	}
+  #BG {
+    background-image: url("../assets/img/bg-image-socia.png");
+  }
 </style>
