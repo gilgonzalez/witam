@@ -1,0 +1,46 @@
+---
+
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import BlogPostCard from "../../components/BlogPostCard.astro";
+
+// Obtener todas las entradas del blog y ordenarlas por fecha de publicación (más recientes primero)
+const blogPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+
+const sortedPosts = blogPosts.sort((a, b) => {
+  return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+});
+---
+
+<Layout>
+  <SectionHeader title="Blog" subtitle="Noticias y artículos sobre transporte y movilidad" />
+  
+  <div class="container">
+    <div class="mb-8">
+      <p class="text-lg">Descubre las últimas noticias, análisis y tendencias en el sector del transporte y la movilidad desde una perspectiva inclusiva.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {sortedPosts.map((post) => (
+        <BlogPostCard
+          url={`/blog/${post.slug}`}
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          author={post.data.author}
+          image={post.data.image}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+    
+    {sortedPosts.length === 0 && (
+      <div class="text-center py-12">
+        <p class="text-gray-500">No hay entradas de blog disponibles en este momento.</p>
+      </div>
+    )}
+  </div>
+</Layout>
