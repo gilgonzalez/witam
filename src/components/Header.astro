@@ -1,7 +1,13 @@
 ---
 // Obtener la ruta actual para determinar qué enlace debe estar en negrita
-const currentPath = Astro.url.pathname;
-console.log("Ruta actual:", currentPath);
+let currentPath = Astro.url.pathname;
+// Normalizar la ruta (eliminar barras finales y asegurarse de que comienza con /)
+if (currentPath !== '/' && currentPath.endsWith('/')) {
+    currentPath = currentPath.slice(0, -1);
+}
+if (!currentPath.startsWith('/')) {
+    currentPath = '/' + currentPath;
+}
 
 // Importar el SVG como componente
 import witamLogoWhite from '../assets/svg/witam-white-icon.svg';
