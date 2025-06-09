@@ -1,0 +1,111 @@
+---
+interface Props {
+  profile: {
+    name: string,
+    image: string,
+    role: string,
+    job: string,
+    paragraph: string
+  }
+}
+const { image, name, role, job, paragraph } = Astro.props.profile;
+
+// Crear un ID único basado en el nombre (eliminando espacios y caracteres especiales)
+const dialogId = `dialog-${name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+
+---
+<button 
+  class="flex flex-col items-center cursor-pointer transition-all duration-300 hover:scale-105" 
+  commandfor={dialogId} 
+  command="show-modal"
+  data-dialog-target={dialogId}
+>
+  <div class="mb-3 overflow-hidden rounded-2xl shadow-xl">
+      <img src={image} alt={name} class="aspect-square object-cover  transition-transform duration-300 rounded-2xl"/>
+  </div>
+  <div class="flex flex-col items-start justify-between">
+      <span class="flex flex-col ">
+          <p class="font-bold text-xl">{name}</p>
+          <p class="text-lg font-semibold text-left" style="color:#D4C5AE">{role}</p>
+      </span>
+      <p class="text-md text-left mt-2">{job}</p>
+  </div>
+</button>
+
+<dialog 
+  id={dialogId} 
+  class="bg-white rounded-lg max-w-2xl w-full fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-xl backdrop:bg-black/60 backdrop:backdrop-blur-sm transition-all duration-300 z-50"
+>
+  <div class="flex justify-between items-start p-6 border-b border-[#D4C5AE]">
+    <div class="flex flex-col md:flex-row items-start gap-4">
+      <img src={image} alt={name} class="max-w-32 aspect-square rounded-lg object-cover shadow-md" />
+      <div class="flex flex-1 flex-col">
+        <h2 class="text-2xl font-bold mb-2">{name}</h2>
+        <p class="text-lg text-[#D4C5AE]">{role}</p>
+        <p class="text-md">{job}</p>
+      </div>
+    </div>
+    <button 
+      commandfor={dialogId} 
+      command="close"
+      class="flex justify-center items-center p-1 h-8 w-8 cursor-pointer text-gray-500 hover:text-gray-700 transition-colors duration-200 hover:bg-gray-100 rounded-full"
+      data-dialog-close
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+    <section>
+      <h3 class="text-xl font-semibold mb-3">Informacion</h3>
+      <div set:html={paragraph}/>
+    </section>
+  </div>
+</dialog>
+
+<script>
+  // Función para inicializar los eventos del diálogo
+  function initializeDialogs() {
+    // Seleccionar todos los botones que abren diálogos
+    const buttons = document.querySelectorAll('[data-dialog-target]');
+    
+    buttons.forEach(button => {
+      const dialogId = button.getAttribute('data-dialog-target');
+      const dialog = document.getElementById(dialogId);
+      const closeButton = dialog?.querySelector('[data-dialog-close]');
+
+      if (!dialog || !closeButton) return;
+
+      // Abrir el diálogo
+      button.addEventListener('click', () => {
+        dialog.showModal();
+      });
+
+      // Cerrar el diálogo
+      closeButton.addEventListener('click', () => {
+        dialog.close();
+      });
+
+      // Cerrar el diálogo al hacer clic fuera
+      dialog.addEventListener('click', (e) => {
+        const dialogDimensions = dialog.getBoundingClientRect();
+        if (
+          e.clientX < dialogDimensions.left ||
+          e.clientX > dialogDimensions.right ||
+          e.clientY < dialogDimensions.top ||
+          e.clientY > dialogDimensions.bottom
+        ) {
+          dialog.close();
+        }
+      });
+    });
+  }
+
+  // Inicializar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', initializeDialogs);
+
+  // Para Astro: reinicializar cuando se actualice la página
+  document.addEventListener('astro:page-load', initializeDialogs);
+</script>

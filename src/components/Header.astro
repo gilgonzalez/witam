@@ -1,6 +1,7 @@
 ---
 // Obtener la ruta actual para determinar qué enlace debe estar en negrita
 const currentPath = Astro.url.pathname;
+console.log("Ruta actual:", currentPath);
 
 // Importar el SVG como componente
 import witamLogoWhite from '../assets/svg/witam-white-icon.svg';
@@ -37,10 +38,11 @@ import witamLogo from '../assets/svg/witam-icon.svg';
             </div>
         </div>
         <div class="flex-1"/>
-        <div class="flex flex-1 flex-col w-full md:flex-row min-w-fit items-center justify-between md:place-self-end">
+        <div class="flex flex-1 flex-col w-full md:flex-row min-w-fit items-center justify-end md:gap-4 md:place-self-end">
             <a href="/" class={`header-link ${currentPath === '/' ? 'font-bold' : 'font-light'}`}>Home</a>
             <a href="/junta-directiva" class={`header-link ${currentPath === '/junta-directiva' ? 'font-bold' : 'font-light'}`}>Junta directiva</a>
-            <a href="/socios-colaboradoras" class={` header-link ${currentPath === '/socios-colaboradoras' ? 'font-bold' : 'font-light'}`}>Socios y colaboradoras</a>
+            <a href="/socios-colaboradoras" class={` header-link ${currentPath === '/socios-colaboradoras' ? 'font-bold' : 'font-light'}`}>Socias y colaboradoras</a>
+            <a href="/blog" class={` header-link ${currentPath === '/blog' ? 'font-bold' : 'font-light'}`}>Blog</a>
         </div>
     </div>
 </div>

@@ -1,90 +1,126 @@
 ---
 import SectionHeader from "../components/SectionHeader.astro";
 import Layout from "../layouts/Layout.astro";
-import Footer from '../components/Footer.astro';
+import Footer from "../components/Footer.astro";
 
 // Importar las imágenes
-import avatar1 from '../assets/img/avatar-1.png';
-import avatar2 from '../assets/img/avatar-2.png';
-import avatar3 from '../assets/img/avatar-3.png';
-import avatar4 from '../assets/img/avatar-4.png';
+import avatar1 from "../assets/img/avatar-1.png";
+import avatar2 from "../assets/img/avatar-2.png";
+import avatar3 from "../assets/img/avatar-3.png";
+import avatar4 from "../assets/img/avatar-4.png";
+import CardProfile from "../components/CardProfile.astro";
 
-const avatars = [
-    {
-        name: 'Lola Ortiz',
-        role: 'Presidenta',
-        job: 'Directora General de Planificación e Infraestructuras de Movilidad del Ayuntamiento de Madrid',
-        image: avatar1.src
-    },
-    {
-        name: 'Noemí Vaquero',
-        role: 'Vicepresidenta',
-        job: 'Directora de Madrid y Directora de Movilidad en Innovasur',
-        image: avatar2.src
-    },
-    {
-        name: 'Beatriz Osuna',
-        role: 'Tesorera',
-        job: 'Directora de Desarrollo de Negocio de Rover Grupo',
-        image: avatar3.src
-
-    },
-    {
-        name: 'Ofelia Manjón',
-        role: 'Secretaria',
-        job: 'Directora General de Movilidad y Accesibilidad Universal del Ayuntamiento de Santa Cruz de Tenerife',
-        image: avatar4.src
-    }
-]
+const profiles = [
+  {
+    name: "Lola Ortiz",
+    role: "Presidenta",
+    job: "Directora General de Planificación e Infraestructuras de Movilidad del Ayuntamiento de Madrid",
+    image: avatar1.src,
+    paragraph: `<p><strong>Ingeniera de Caminos, Canales y Puertos</strong> por la Universidad de Granada, funcionaria del Estado y con más de 20 años de experiencia en planificación urbana, movilidad sostenible e infraestructuras.</p><br>
+        
+        <p>Cuenta con formación de alto nivel en liderazgo público (IESE, IE, IEF-EOI) y comunicación institucional (EOI), así como especialización en gestión costera y metodología BIM.</p><br>
+        
+        <p>Ha desarrollado una sólida trayectoria en las tres administraciones públicas (estatal, regional y local), desempeñando cargos de responsabilidad como: Directora General de Planificación e Infraestructuras de Movilidad en el Ayuntamiento de Madrid, Secretaria General Técnica en la Junta de Andalucía, Subdirectora General de Desarrollo Urbano en el Ministerio de Hacienda, Subdirectora General Adjunta de Costas en el Ministerio de Transición Ecológica.</p><br>
+        
+        <p>Ha liderado proyectos emblemáticos como el Plan de Movilidad Madrid 360, el soterramiento de la A5 o la transformación del Nudo Norte, y ha representado a España y a la ciudad de Madrid en foros internacionales de movilidad urbana y distribución sostenible.</p><br>
+        
+        <p>Actualmente, es <strong>Presidenta de WITAM</strong> (Women in Transport and Mobility), donde impulsa el liderazgo femenino en el sector, y también: Presidenta del Foro de Movilidad de Eurocities, Presidenta de Cities Today, Presidenta del grupo de distribución urbana de POLIS, Vicepresidenta de la Asociación Española de la Carretera.</p><br>
+        
+        <p>Su experiencia la posiciona como una figura referente en planificación de ciudades, liderazgo técnico y transformación sostenible del espacio urbano.</p>`,
+  },
+  {
+    name: "Noemí Vaquero",
+    role: "Vicepresidenta",
+    job: "Directora de Madrid y Directora de Movilidad en Innovasur",
+    image: avatar2.src,
+    paragraph: `<p>Es <strong>licenciada en Derecho y en Relaciones Laborales y Recursos Humanos</strong>, y cuenta además con un <strong>MBA</strong>, un <strong>Máster en Dirección de Recursos Humanos</strong>, formación como <strong>Master Coach</strong>, así como titulaciones técnicas en Movilidad Urbana Sostenible y Estrategia Europea de Desarrollo Sostenible. Posee más de 18 años de experiencia internacional en Europa y América Latina liderando proyectos de transporte público, movilidad urbana sostenible y estrategias de Smart Cities.</p><br>
+ 
+    <p>Ha sido Directora de Transporte y Movilidad en el Ayuntamiento de Aranjuez, donde impulsó programas europeos de movilidad    urbana. Entre 2014 y 2019 trabajó en Perú como Gerente General de Taryet S.L., liderando operaciones comerciales,  coordinación institucional y gestión financiera. Posteriormente, fue Directora de Desarrollo de Negocio en Telefónica    Ingeniería de Seguridad, centrada en movilidad, Smart Cities y alianzas estratégicas. De 2019 a 2024, fue Directora de la  Oficina de Movilidad y Sostenibilidad de MERLIN Properties, liderando planes de transporte al trabajo, implantación de   soluciones sostenibles y colaboración público-privada. Actualmente, es Directora de Movilidad y Delegada Territorial en   Madrid en Innovasur.</p><br>
+    
+    <p>Forma parte de la junta directiva de WITAM como <strong>Vicepresidenta</strong>, desde donde lidera iniciativas  orientadas a visibilizar el talento femenino en movilidad y transporte, promoviendo la participación activa de mujeres en    posiciones estratégicas y de toma de decisiones.</p><br>
+    
+    <p>Su perfil combina visión estratégica, experiencia en políticas públicas, liderazgo de equipos multidisciplinares y una   clara orientación a la innovación y transformación urbana sostenible.</p>`,
+  },
+  {
+    name: "Beatriz Osuna",
+    role: "Tesorera",
+    job: "Directora de Desarrollo de Negocio de Rover Grupo",
+    image: avatar3.src,
+    paragraph: `<p><strong>Ingeniera de Caminos, Canales y Puertos</strong> por la Universidad de Granada, con formación de posgrado en <strong>Infraestructuras Ferroviarias, Big Data, Business Analytics y Project Management (PMP)</strong>. Acumula una trayectoria de casi 30 años en el desarrollo y gestión de proyectos de obra civil, movilidad e infraestructuras, tanto en el sector público como en la empresa privada.</p><br>
+ 
+    <p>Ha ocupado cargos de responsabilidad en compañías como Ferrovial Agroman US, Grupo ACS, PROINTEC y Metropolitano de  enerife, donde fue Directora de Obra Civil de la Línea 1 del Metro Ligero. Entre 2010 y 2019 ejerció como Directora Insular     e Carreteras y Paisaje del Cabildo de Tenerife, y posteriormente fue Directora de Proyectos en la empresa pública GESTUR.  ctualmente, lidera estrategias de movilidad sostenible y accesibilidad universal desde la Dirección General del     yuntamiento de Santa Cruz de Tenerife.</p><br>
+    
+    <p>Compagina su labor institucional con una destacada participación en órganos técnicos y asociaciones del sector, como la  sociación Española de la Carretera (AEC), y ha sido reconocida con premios como la Medalla de Honor con Mención Especial y  l Premio Agustín de Betancourt. Es autora de publicaciones especializadas sobre gestión del paisaje y retos en redes    iarias locales.</p><br>
+    
+    <p>Es <strong>Secretaria de WITAM</strong>, donde trabaja activamente en el fortalecimiento del papel de las mujeres en el  ector del transporte, a través del desarrollo de redes profesionales, programas de capacitación y espacios de diálogo   écnico. Su perfil combina excelencia técnica, liderazgo institucional y una visión integradora del desarrollo sostenible de  as infraestructuras.</p>`,
+  },
+  {
+    name: "Ofelia Manjón",
+    role: "Secretaria",
+    job: "Directora General de Movilidad y Accesibilidad Universal del Ayuntamiento de Santa Cruz de Tenerife",
+    image: avatar4.src,
+    paragraph: `<p><strong>Arquitecta Superior</strong> por la Universidad Politécnica de Madrid, cuenta con más de dos décadas de experiencia en el diseño, dirección y gestión de grandes proyectos de infraestructuras de transporte, tanto ferroviarias como viarias, en el ámbito público. A lo largo de su carrera ha estado vinculada a las principales actuaciones de Metro de Madrid y al desarrollo de infraestructuras clave para la Comunidad de Madrid.</p><br>
+ 
+    <p>Ha trabajado en organismos como GIF (hoy ADIF), AEPO (Acciona Ingeniería) y Metro de Madrid, antes de incorporarse en    2004 a la administración autonómica. Desde entonces, ha ocupado cargos de alta responsabilidad técnica, incluyendo la  dirección de proyectos y obras de ampliaciones de líneas de Metro, intercambiadores y cocheras. Entre 2019 y 2021 fue    responsable de proyectos emblemáticos como la ampliación de la Línea 9 a Mirasierra y las instalaciones asociadas.     Actualmente es <strong>Subdirectora de Proyectos y Construcción</strong> en la Dirección General de Infraestructuras del    Transporte Colectivo de la Comunidad de Madrid, liderando actuaciones estratégicas como la ampliación de las líneas 3, 5 y     11 del Metro de Madrid.</p><br>
+    
+    <p>Su perfil técnico se complementa con una visión global del desarrollo urbano y la movilidad, aplicando un enfoque    riguroso, colaborativo y resolutivo en cada fase de los proyectos que gestiona.</p><br>
+    
+    <p>Además, desempeña el cargo de <strong>Tesorera de WITAM</strong>, desde donde contribuye a consolidar la estructura y el     crecimiento de la asociación, aportando una perspectiva práctica y orientada a resultados en la gestión interna y el impulso    de nuevas iniciativas.</p>`,
+  },
+];
 ---
-<Layout>
-	<div id="BG" class="bg-center bg-cover bg-no-repeat w-full flex flex-col md:items-start md:justify-center h-[50vh] md:h-screen"/>
-    <SectionHeader title='Junta directiva' />
-    <div class="container flex flex-col gap-8">
-        <div id="LEADERSHIP" class="flex flex-col gap-4">
-            <p class="font-semibold text-xl">Liderazgo con perspectiva</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                <p class="flex flex-2 text-pretty">La Junta Directiva de WITAM está formada por mujeres referentes en distintas áreas del transporte y la movilidad. Comprometidas con la igualdad, la innovación y el impulso del talento femenino, su labor es estratégica: definen la visión, coordinan las acciones clave de la Asociación y representan nuestros valores en todos los espacios institucionales y sectoriales.</p>
-                <p class="flex flex-1" style="color: #D4C5AE;">"El liderazgo femenino no es una opción: es el motor de una movilidad más justa, eficiente y sostenible."</p>
-            </div>
-        </div>
-        <div id="COMPONENTS" class="flex flex-col gap-8">
-            <p class="font-semibold text-xl">Composición de la Junta </p>
-            <div id="GALLERY" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-center gap-6 md:gap-8">
-                {
-                    avatars.map(avatar => (
-                        <div class="flex flex-col items-center">
-                            <div class="mb-3">
-                                <img src={avatar.image} alt={avatar.name} class="aspect-square rounded-md object-cover"/>
-                            </div>
-                            <div class="flex flex-col items-start justify-between ">
-                                <span class="flex flex-col">
-                                    <p class="font-bold text-lg">{avatar.name}</p>
-                                    <p class="text-md " style="color:#D4C5AE">{avatar.role}</p>
-                                </span>
-                                <p class="text-sm text-left mt-2">{avatar.job}</p>
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
-        </div>
-    </div>
-    <Footer/>
 
+<Layout>
+  <div
+    id="BG"
+    class="bg-center bg-cover bg-no-repeat w-full flex flex-col md:items-start md:justify-center h-[50vh] md:h-screen"
+  >
+  </div>
+  <SectionHeader title="Junta directiva" />
+  <div class="container flex flex-col gap-8">
+    <div id="LEADERSHIP" class="flex flex-col gap-4">
+      <p class="font-semibold text-xl">Liderazgo con perspectiva</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+        <p class="flex flex-2 text-pretty text-lg">
+          La Junta Directiva de WITAM está formada por mujeres referentes en
+          distintas áreas del transporte y la movilidad. Comprometidas con la
+          igualdad, la innovación y el impulso del talento femenino, su labor es
+          estratégica: definen la visión, coordinan las acciones clave de la
+          Asociación y representan nuestros valores en todos los espacios
+          institucionales y sectoriales.
+        </p>
+        <p
+          class="flex flex-1 text-3xl text-center text-balance"
+          style="color: #D4C5AE;"
+        >
+          "El liderazgo femenino no es una opción: es el motor de una movilidad
+          más justa, eficiente y sostenible."
+        </p>
+      </div>
+    </div>
+    <div id="COMPONENTS" class="flex flex-col gap-8">
+      <p class="font-semibold text-xl">Composición de la Junta</p>
+      <div
+        id="GALLERY"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-center gap-6 md:gap-8"
+      >
+        {profiles.map((profile) => <CardProfile profile={profile} />)}
+      </div>
+    </div>
+  </div>
+  <Footer />
 </Layout>
 
-
 <style>
-	#BG {
-		background-image: url('../assets/img/bg-image-junta.png');
-		background-position: center;
-	}
-	
-	@media (max-width: 768px) {
-		#BG {
-			background-position: center top;
-			background-size: contain;
-		}
-	}
+  #BG {
+    background-image: url("../assets/img/bg-image-junta.png");
+    background-position: center;
+  }
+
+  @media (max-width: 768px) {
+    #BG {
+      background-position: center top;
+      background-size: contain;
+    }
+  }
 </style>
