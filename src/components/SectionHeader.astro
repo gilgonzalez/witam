@@ -7,12 +7,12 @@ interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<div class="bg-orange-100 horizontal-padding">
-    <div class="margin-left flex flex-row gap-8 py-4">
-        <p class="text-2xl font-bold">{title}</p>
+<div class="bg-orange-100">
+    <div class="margin-left flex flex-row gap-12 items-center py-6">
+        <p class="section-title">{title}</p>
         {
-            subtitle && <div class="max-w-32">
-                <p class="text-balance text-xs font-semibold">{subtitle}</p>
+            subtitle && <div class="max-w-64">
+                <p class="text-balance heading-3 font-semibold">{subtitle}</p>
                 </div>
         }
     </div>

@@ -7,8 +7,8 @@ import Footer from '../components/Footer.astro';
 <Layout>
 	{/* HERO SECTION */}
 	<div id="BG" class="bg-cover bg-center bg-no-repeat h-screen w-full flex flex-col md:items-start md:justify-center">
-		<div class="mt-32 margin-left md:mt-0 max-w-44 md:max-w-xs font-bold text-white text-xl text-balance md:text-3xl text-left flex flex-col">
-			<p>Impulsando el liderazgo femenino en el transporte y la movilidad</p>
+		<div class="mt-32 margin-left md:mt-0 max-w-44 md:max-w-sm font-bold text-white text-xl text-balance md:text-3xl text-left flex flex-col">
+			<p class="title">Impulsando el liderazgo femenino en el transporte y la movilidad</p>
 		</div>
 	</div>
 
@@ -18,17 +18,17 @@ import Footer from '../components/Footer.astro';
 	{/* DESCRIPCIÓN */}
 	<div class="container flex flex-col gap-8">
 		<div id="DESCRIPTION" class="flex flex-col max-w-sm">
-			<p class="font-semibold mb-4 text-balance text-lg">
+			<p class="font-semibold mb-4 text-balance text-lg heading">
 				WITAM es la asociación de mujeres profesionales del sector del transporte y la movilidad en España. 
 			</p>
 		</div>
 		<div class=" grid grid-cols-1 md:grid-cols-2">
 			<div class="flex flex-col max-w-sm">
-				<p class="text-base text-balance">
+				<p class="text-base text-balance paragraph">
 					<b>Nuestro propósito es claro:</b><br/>
-					Promover la igualdad de oportunidades, visibilizar el talento femenino y generar redes de colaboración transformadoras en uno de los sectores estratégicos para el futuro del país.
-					Desde el ferrocarril hasta la movilidad urbana, desde la logística hasta la innovación en transporte sostenible, las mujeres están liderando el cambio. <b>En WITAM las acompañamos, conectamos y les damos voz.</b>
+					Impulsar el liderazgo femenino, visibilizar el talento profesional de las mujeres y generar redes de colaboración transformadoras en uno de los sectores estratégicos para el futuro del país. Desde el ferrocarril hasta la movilidad urbana, desde la logística hasta la innovación en transporte sostenible, las mujeres están liderando el cambio. <b>En WITAM las acompañamos, conectamos y les damos visibilidad.</b>
 				</p>
+				
 			</div>
 			<form class="flex flex-col max-w-md mr-2">
 				<p class="form-title"> <b>¿Te interesa formar parte de nuestra red?</b><br>Déjanos tu correo electrónico y te escribiremos para contarte cómo hacerte socia.</p>
@@ -47,23 +47,23 @@ import Footer from '../components/Footer.astro';
 		</div>
 		{/* POR QUE EXISTIMOS */}
 		<div class=" bg-black rounded-2xl text-white p-6 flex flex-col gap-4 flex-1">
-			<p class="font-bold text-xl">¿Por qué existimos?</p>
+			<p class="heading-2">¿Por qué existimos?</p>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-				<p class="font-light max-w-sm text-balance">
-					A pesar de los avances, las mujeres siguen estando infrarepresentadas en puestos de responsabilidad dentro del transporte y la movilidad. WITAM nace para revertir esta realidad y construir un sector más inclusivo, moderno y equitativo.</p>
+				<p class="font-light text-balance paragraph">
+					El sector del transporte y la movilidad cuenta con numerosas mujeres con sólida formación y amplia experiencia. Sin embargo, su presencia en el ámbito laboral no refleja todo ese potencial. WITAM nace como una asociación que impulsa la visibilidad de ese talento, promueve una participación más activa y contribuye al desarrollo de un sector más diverso, innovador y representativo</p>
 				</p>
 				<div class="flex flex-col gap-4">
 					<p class="font-bold text-orange-100">Queremos: </p>
-					<ul class="flex flex-col gap-2">
-						<li class="flex flex-row items-center gap-2">
+					<ul class="flex flex-col gap-2 ">
+						<li class="list-item">
 							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 rounded-xs inline-block"></div>
 							Abrir espacios de liderazgo femenino.
 						</li>
-						<li class="flex flex-row items-center gap-2">
+						<li class="list-item">
 							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 rounded-xs inline-block"></div>
 							Conectar talento con oportunidades.
 						</li>
-						<li class="flex flex-row items-center gap-2">
+						<li class="list-item">
 							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 rounded-xs inline-block"></div>
 							Transformar el sector desde dentro.
 						</li>
@@ -75,73 +75,73 @@ import Footer from '../components/Footer.astro';
 		{/* A QUIEN NOS DIRIGIMOS*/}
 		<div id="FOR-WHO" class="flex flex-col gap-8">
 			<div class="flex flex-row gap-4 items-center">
-				<div style="background-color:#D4C5AE" class="aspect-square w-4 rotate-45 rounded-xs inline-block"/>
-				<p class="font-bold text-2xl">¿A quién nos dirigimos?</p>
+				<div style="background-color:#D4C5AE" class="heading-decorator"/>
+				<p class="heading">¿A quién nos dirigimos?</p>
 			</div>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
 				<div class="flex flex-col p-4 rounded-md gap-4 justify-between"  style="background-color: #F7E6CA80;">
 					<p class="text-lg font-semibold">Mujeres profesionales del sector</p>
 					<ul class="text-sm flex flex-col gap-2">
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Si trabajas o quieres trabajar en trasporte, logística, movilidad urbana, ingeniería, innovación, etc.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Si buscas mentoría, formación y una red sólida para crecer…
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Si quieres participar activamente en un cambio estructural…
 						</li>
 					</ul>
-					<p class="font-semibold text-sm">WITAM es tu lugar</p>
+					<p class="font-semibold heading-3">WITAM es tu lugar</p>
 	
 				</div>
 				<div class="flex flex-col p-4 rounded-md gap-4 justify-between" style="background-color: #F7E6CA80;">
 					<p class="text-lg font-semibold">Empresas, instituciones y entidades </p>
 					<ul class="text-sm flex flex-col gap-2">
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Si quieres avanzar hacia un modelo más igualitario en tu organización.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Si buscas talento diverso para tus proyectos o eventos.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Si quieres apoyar iniciativas de impacto social real y medible…
 						</li>
 					</ul>
-					<p  class="font-semibold text-sm">WITAM es tu aliada estratégica</p>
+					<p  class="font-semibold heading-3">WITAM es tu aliada estratégica</p>
 				</div>
 			</div>
 		</div>
 		{/* QUE OFRECEMOS */}
 		<div id="WHAT-WE-OFFER" class="flex flex-col gap-8">
 			<div class="flex flex-row gap-4 items-center">
-				<div style="background-color:#D4C5AE" class="aspect-square w-4 rotate-45 rounded-xs inline-block"/>
-				<p class="font-bold text-2xl">¿Qué ofrecemos?</p>
+				<div style="background-color:#D4C5AE" class="heading-decorator"/>
+				<p class="heading">¿Qué ofrecemos?</p>
 			</div>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
 				<div class="flex flex-col p-4 rounded-md gap-4"  style="background-color: #F7E6CA80;">
 					<p class="text-lg font-semibold">Para las socias</p>
 					<ul class="text-sm flex flex-col gap-2">
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Actividades de formación, mentoría y desarrollo profesional.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Eventos de networking y participación en congresos nacionales.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Acceso exclusivo a bolsa de empleo y grupos de trabajo especializados.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Visibilidad como líder dentro de una red activa y comprometida.
 						</li>
 					</ul>
@@ -149,20 +149,20 @@ import Footer from '../components/Footer.astro';
 				<div class="flex flex-col p-4 rounded-md gap-4" style="background-color: #F7E6CA80;">
 					<p class="text-lg font-semibold">Para las empresas colaboradoras</p>
 					<ul class="text-sm flex flex-col gap-2">
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Acceso a una comunidad cualificada de profesionales del sector.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Visibilidad como entidad comprometida con la igualdad y la movilidad sostenible.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Participación en eventos, jornadas y foros junto a líderes del sector.
 						</li>
-						<li class="flex flex-row items-center gap-2">
-							<div style="background-color:#777B78" class="aspect-square min-w-2 rotate-45 inline-block"></div>
+						<li class="list-item">
+							<div style="background-color:#777B78" class="list-decorator"></div>
 							Beneficios según el nivel de patrocinio: desde difusión en medios y redes hasta participación activa en paneles y mesas redondas.
 						</li>
 					</ul>

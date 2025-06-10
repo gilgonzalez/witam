@@ -54,11 +54,11 @@ const levels =[
   <SectionHeader title="Socias y colaboradoras" />
   <div class="container flex flex-col gap-8">
     <div class="flex flex-col gap-8 max-w-xl text-pretty">
-      <p class="font-semibold text-2xl">
+      <p class="heading">
         Únete al cambio.<br />
         Forma parte de WITAM.
       </p>
-      <p>
+      <p class="paragraph">
         Desde WITAM creemos en la fuerza de la red, en el poder de compartir
         experiencias y en el impacto real de sumar esfuerzos. Tanto si eres una
         profesional del sector como si representas a una empresa o institución,
@@ -70,15 +70,15 @@ const levels =[
     </div>
     <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
       <div class="flex flex-col gap-4">
-        <p class="font-bold text-lg">¿A quién va dirigido?</p>
-        <p>
+        <p class="heading-2">¿A quién va dirigido?</p>
+        <p class="paragraph">
           A mujeres que trabajen o aspiren a trabajar en el ámbito del
           transporte, la movilidad, la logística, la ingeniería, la innovación
           tecnológica aplicada al sector o áreas relacionadas.
         </p>
       </div>
       <div class="flex flex-col gap-4">
-        <p class="font-bold text-lg">Tipos de membresía</p>
+        <p class="heading-2">Tipos de membresía</p>
         <div class="grid grid-cols-2 gap-8">
           <div class="w-40 rounded-xl shadow-md overflow-hidden text-sm">
             <div class="bg-gray-300 text-center font-bold uppercase py-2">
@@ -124,15 +124,15 @@ const levels =[
         </div>
       </div>
       <div>
-        <p><b>¿Te interesa?</b></p>
-        <p>Déjanos tu email y te enviaremos los pasos para asociarte.</p>
+        <p class="heading-2"><b>¿Te interesa?</b></p>
+        <p class="">Déjanos tu email y te enviaremos los pasos para asociarte.</p>
         <button class="px-12 py-0.5 bg-black text-white rounded-full mt-4">
           Enviar
         </button>
       </div>
       <div class="flex flex-col gap-4">
-        <p><b>Beneficios de ser socia:</b></p>
-        <ul class="list-disc list-inside flex flex-col flex-wrap gap-2">
+        <p class="heading-2"><b>Beneficios de ser socia:</b></p>
+        <ul class="list-disc list-inside flex flex-col flex-wrap gap-2 paragraph">
           <li>Acceso a formaciones especializadas, talleres y mentorías.</li>
           <li>
             Participación en eventos, jornadas y encuentros de networking.
@@ -158,9 +158,9 @@ const levels =[
       </p>
     </div>
     <div class="flex flex-col gap-8">
-      <div class="flex flex-col gap-4 max-w-xl text-balance">
-          <p class="text-2xl"><b>¿Por qué colaborar?</b></p>
-          <p>
+      <div class="flex flex-col gap-4 max-w-2xl text-balance">
+          <p class="heading"><b>¿Por qué colaborar?</b></p>
+          <p class="paragraph">
             El compromiso con la igualdad y la diversidad no solo es justo, también
             es estratégico. Colaborar con WITAM te posiciona como una entidad
             referente en responsabilidad social, innovación inclusiva y apoyo al
@@ -168,7 +168,7 @@ const levels =[
           </p>
       </div>
       <div class="flex flex-col gap-8">
-        <p class="text-2xl"><b>Modalidades de colaboración</b></p>
+        <p class="heading"><b>Modalidades de colaboración</b></p>
         <div class="flex flex-row flex-wrap gap-8">
           {modalidades.map((modalidad) => (
             <div style="background-color:  #F6F3EF" class="flex flex-col rounded-lg overflow-hidden max-w-60">
