@@ -27,11 +27,11 @@
 }
 
 .heading-3 {
-  @apply text-base md:text-lg lg:text-xl font-medium leading-normal mb-2 transition-all duration-300
+  @apply text-base md:text-lg lg:text-xl font-medium leading-normal transition-all duration-300
 }
 
 .paragraph {
-  @apply text-sm md:text-base lg:text-xl leading-relaxed mb-4 
+  @apply text-sm md:text-base lg:text-xl leading-relaxed  
 }
 .card-text {
   @apply flex flex-1 text-xs md:text-sm lg:text-base leading-relaxed 
