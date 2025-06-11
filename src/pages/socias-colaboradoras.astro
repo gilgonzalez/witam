@@ -24,22 +24,58 @@ const modalidades = [
 const levels =[
   {
     tier: "platino",
-    description: "Visibilidad + participación activa",
+    items: [
+      "Inclusión en materiales promocionales.",
+      "Visibilidad del logo de la entidad en la web.",
+      "Participación en la toma de decisiones sobre movilidad y género.",
+      "Posibilidad de liderar proyectos conjuntos con la asociación",
+      "Acceso a encuentros privados con directivos y responsables del sector.",
+      "Colaboración exclusiva en estudios e investigaciones o White Papers sobre movilidad y equidad de género.",
+      "Invitación para 4 representantes y 2 ponentes de la entidad a eventos de networking, desayunos, jornadas y congresos organizados por la asociación.",
+      "Publicación de 4 artículos al año en el Blog.",
+      "Realización de 3 entrevistas en el podcast de WITAM.",
+      "Suscripción gratuita para 20 socias (Senior o Impulsa) de la propia empresa o de otras entidades.",
+      "Descuento del 20% en la cuota del resto de socias que se inscriban de la propia empresa o profesionales recomendadas de otras entidades."
+    ],
     color: "#DADADA"
   },
   {
     tier: "oro",
-    description: "Espacio destacado en eventos + media",
+    items: [
+      "Inclusión en materiales promocionales.",
+      "Visibilidad del logo de la entidad en la web.",
+      "Acceso a encuentros privados con directivos y responsables del sector.",
+      "Invitación para 3 representantes y 1 ponentes de la entidad a eventos de networking, desayunos, jornadas y congresos organizados por la asociación.",
+      "Publicación de 3 artículos al año en el Blog.",
+      "Realización de 2 entrevista en el podcast de WITAM.",
+      "Suscripción gratuita para 15 socias (Senior o Impulsa) de la propia empresa o de otras entidades.",
+      "Descuento del 20% en la cuota del resto de socias que se inscriban de la propia empresa o profesionales recomendadas de otras entidades."
+    ],
     color: "#D4C5AE"
   },
   {
     tier: "plata",
-    description: "Logotipo y mención en boletines/web",
+    items: [
+      "Inclusión en materiales promocionales.",
+      "Visibilidad del logo de la entidad en la web.",
+      "Invitación para 2 representantes de la entidad a eventos de networking, desayunos, jornadas y congresos organizados por la asociación.",
+      "Publicación de 2 articulo al año en el Blog.",
+      "Realización de 1 entrevista en el podcast de WITAM.",
+      "Suscripción gratuita para 10 socias (Senior o Impulsa) de la propia empresa o de otras entidades.",
+      "Descuento del 20% en la cuota del resto de socias que se inscriban de la propia empresa o profesionales recomendadas de otras entidades."
+    ],
     color: "#B6B6B6"
   },
   {
     tier: "bronce",
-    description: "Presencia básica e invitaciones especiales",
+    items: [
+      "Inclusión en materiales promocionales.",
+      "Visibilidad del logo de la entidad en la web.",
+      "Invitación para 1 representante de la entidad a eventos de networking, desayunos, jornadas y congresos organizados por la asociación.",
+      "Publicación de 1 articulo al año en el Blog.",
+      "Suscripción gratuita para 5 socias (Senior o Impulsa) de la propia empresa o de otras entidades.",
+      "Descuento del 20% en la cuota del resto de socias que se inscriban de la propia empresa o profesionales recomendadas de otras entidades."
+    ],
     color: "#CEAF98"
   }
 ]
@@ -59,10 +95,7 @@ const levels =[
         Forma parte de WITAM.
       </p>
       <p class="paragraph">
-        Desde WITAM creemos en la fuerza de la red, en el poder de compartir
-        experiencias y en el impacto real de sumar esfuerzos. Tanto si eres una
-        profesional del sector como si representas a una empresa o institución,
-        esta sección es para ti.
+        Desde WITAM creemos en la fuerza de la red, en el poder de compartir experiencias y en el impacto real de sumar esfuerzos. Tanto si eres una profesional del sector como si representas a una empresa o institución, esta sección es para ti.
       </p>
     </div>
     <div class="header-socia">
@@ -77,34 +110,16 @@ const levels =[
           tecnológica aplicada al sector o áreas relacionadas.
         </p>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 ">
         <p class="heading-2">Tipos de membresía</p>
         <div class="flex flex-row flex-wrap gap-8">
-          <div class="w-64 rounded-xl shadow-md overflow-hidden text-sm">
-            <div class="bg-gray-300 text-center font-bold uppercase py-2 heading-3">
-              Socia Junior
-            </div>
-            <div
-              style="background-color: #F6F3EF"
-              class="text-gray-800 px-3 py-4 leading-tight paragraph"
-            >
-              Para mujeres en<br />
-              etapa inicial de su<br />
-              carrera
-            </div>
-            <div
-              style="background-color: #f1ece8"
-              class="px-3 py-2 font-bold text-black paragraph"
-            >
-              Cuota anual: 62,5€
-            </div>
-          </div>
+         
           <div class="w-64 rounded-xl shadow-md overflow-hidden text-sm">
             <div
               style="background-color:#4B4B4B"
-              class="bg-gray-300 text-center font-bold uppercase py-2 text-white heading-3"
+              class="bg-gray-300  uppercase py-2 "
             >
-              Socia Senior
+              <p class="text-white heading-3 text-center font-bold">Socia Senior</p>
             </div>
             <div
               style="background-color: #F6F3EF"
@@ -121,6 +136,25 @@ const levels =[
               Cuota anual: 125€
             </div>
           </div>
+          <div class="w-64 rounded-xl shadow-md overflow-hidden text-sm">
+            <div class="bg-gray-300 text-center uppercase py-2">
+              <p class="heading-3 font-bold">Socia Junior</p>
+            </div>
+            <div
+              style="background-color: #F6F3EF"
+              class="text-gray-800 px-3 py-4 leading-tight paragraph"
+            >
+              Para mujeres en<br />
+              etapa inicial de su<br />
+              carrera
+            </div>
+            <div
+              style="background-color: #f1ece8"
+              class="px-3 py-2 font-bold text-black paragraph"
+            >
+              Cuota anual: 62,5€
+            </div>
+          </div>
         </div>
       </div>
       <div>
@@ -132,7 +166,7 @@ const levels =[
       </div>
       <div class="flex flex-col gap-4">
         <p class="heading-2"><b>Beneficios de ser socia:</b></p>
-        <ul class="list-disc list-inside flex flex-col flex-wrap gap-2 paragraph">
+        <ul class=" flex flex-col flex-wrap gap-2 list-disc">
           <li>Acceso a formaciones especializadas, talleres y mentorías.</li>
           <li>
             Participación en eventos, jornadas y encuentros de networking.
@@ -161,10 +195,7 @@ const levels =[
       <div class="flex flex-col gap-4 max-w-2xl text-balance">
           <p class="heading"><b>¿Por qué colaborar?</b></p>
           <p class="paragraph">
-            El compromiso con la igualdad y la diversidad no solo es justo, también
-            es estratégico. Colaborar con WITAM te posiciona como una entidad
-            referente en responsabilidad social, innovación inclusiva y apoyo al
-            talento femenino.
+            El compromiso con la diversidad y el talento femenino no solo es necesario, también es estratégico. Colaborar con WITAM te posiciona como una entidad referente en responsabilidad social, innovación sectorial y visibilidad del liderazgo femenino.
           </p>
       </div>
       <div class="flex flex-col gap-8">
@@ -182,15 +213,20 @@ const levels =[
           ))}
         </div>
         <p class="mt-4 text-2xl"><b>Niveles de patrocinio (ejemplo):</b></p>
-        <div class="flex flex-row flex-wrap gap-8">
+        <div class="flex flex-col gap-8">
           {levels.map((level) => (
-            <div style="background-color:  #F6F3EF" class="flex flex-col max-w-60 rounded-lg overflow-hidden">
+            <div style="background-color:  #F6F3EF" class="flex flex-col flex-1 rounded-lg overflow-hidden">
               <div style={`background-color: ${level.color};`} class="p-4 flex flex-wrap">
                 <p class="uppercase text-center font-bold">{level.tier}</p>
               </div>
-              <div class="px-12 py-4 text-left text-semibold">
-                <p class="">{level.description}</p>
-              </div>
+              <ul class="px-12 py-4 text-left text-semibold list-disc flex flex-col gap-2">
+                
+                {
+                  level.items && level.items.map(item => (
+                    <li>{item}</li>
+                  ))
+                }
+              </ul>
             </div>
           ))}
         </div>

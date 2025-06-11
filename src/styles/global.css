@@ -27,7 +27,7 @@
 }
 
 .heading-3 {
-  @apply text-base md:text-lg lg:text-xl font-medium leading-normal transition-all duration-300
+  @apply text-base md:text-lg lg:text-xl leading-normal transition-all duration-300
 }
 
 .paragraph {
